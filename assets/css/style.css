@@ -1,4 +1,4 @@
-:root{
+:root {
   --primary-clr:#b38add;
 }
 
@@ -28,3 +28,63 @@ body {
   border-radius:10px;
   background-color:#373c4f;
 }
+
+.left{
+  width:60%;
+  padding:20px;
+}
+
+.calendar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: #878895;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.calendar::before,
+.calendar::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 12px;
+  height: 97%;
+  border-radius: 0 5px 5px 0;
+  background-color: #d3d4d6d7;
+  transform: translateY(-50%);
+}
+
+.calendar::before {
+  height:94%;
+  left:calc(100% + 12px);
+  background-color: rgd(153,153,153);
+}
+
+.calendar .month {
+  width:100%;
+  height:150px;
+  display:flex;
+  align-items: center;
+  justify-content:space-between;
+  padding:0 50px;
+  font-size:1.2rem;
+  font-weight:500;
+  text-transform:capitalize;
+}
+
+.calendar .month .prev,
+.calendar .month .next {
+  cursor:pointer;
+}
+
+.calendar .month .prev:hover,
+.calendar .month .next:hover {
+  color:var(--primary-clr);
+}
+
