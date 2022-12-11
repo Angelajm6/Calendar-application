@@ -6,7 +6,7 @@ const calendar = document.querySelector(".calendar"),
 
 let today =new Date();
 let activeDay;
-let month =today.getFullMonth();
+let month =today.getMonth();
 let year = today.getFullYear();
 
 const months = [
@@ -24,8 +24,31 @@ const months = [
   "December",
 ];
 
+function initCalendar() {
+  //To get prev month days and current month all days and remaining month days
+  const firstDay = new Date(year,month,1);
+  const lastDay = new Date(year,month + 1,0);
+  const prevLastDay = new Date(year,month,0);
+    const prevDays = prevLastDay.getDate();
+    const lastDate = lastDay.getDate();
+    const day = firstday.getDate();
+    const nextDays = 7 - lastDay.getDay() - 1;
+
+//update date on top of the calendar
+  date.innerHTML = months[month] + " " + year;
+
+//Days on DOM
+  let days = "";
+
+//prev month days
+  for (let x = day; x >0; x--) {
+    days = '<div class= "day prev-date" >${prevDays - x + 1}</div>';
+    }
+  }
 
 
+
+initCalendar();
 
 
 
