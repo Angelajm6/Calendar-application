@@ -4,6 +4,11 @@ const calendar = document.querySelector(".calendar"),
   prev = document.querySelector(".prev");
   next = document.querySelector(".next");
 
+let today =new Date();
+let activeDay;
+let month =today.getFullMonth();
+let year = today.getFullYear();
+
 
 
 
