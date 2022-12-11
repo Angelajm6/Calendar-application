@@ -34,7 +34,7 @@ function initCalendar() {
     const day = firstDay.getDay();
     const nextDays = 7 - lastDay.getDay() - 1;
 
-//update date on top of the calendar
+//update date in the header of the calendar
   date.innerHTML = months[month] + " " + year;
 
 //Days on DOM
@@ -43,7 +43,8 @@ function initCalendar() {
 //prev month days
   for (let x = day; x >0; x--) {
     days += '<div class= "day prev-date" >${prevDays - x + 1}</div>';
-    }
+  }
+
     //current month days
     for(let i = 1; i < lastDate; i++) {
       //if day is today add class today
@@ -51,20 +52,45 @@ function initCalendar() {
         i == new Date().getDate() &&
         year == new Date().getFullYear() &&
         month == new Date().getMonth()
-      )
+      ) {
       days += '<div class= "day today" >${i}</div>';
       } 
-
+      //add remaining as it is
+      else {
+        days += '<div class= "day" >${i}</div>';
     }
+  }
+
+  //next month days
+  for (let j =1; j< nextDays; j++) {
+    days += '<div class= "day next-date" >${j}</div>';
+  }
 
     daysContainer.innerHTML = days;
-
   }
 
 
   initCalendar();
 
+//prev month
+function prevMonth() {
+month--;
+if (month <0) {
+  month =11;
+  year--;
+}
+initCalendar();
+}
 
+//next month
+function nextMonth() {
+  month++;
+  if(month >11) {
+    month =0
+    year++
+  }
+  initCalendar();
+}
 
 
 
