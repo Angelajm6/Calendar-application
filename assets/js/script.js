@@ -1,3 +1,38 @@
+const calendar = document.querySelector(".calendar"),
+  date = document.querySelector(".date"),
+  daysContainer = document.querySelector(".days"),
+  prev = document.querySelector(".prev");
+  next = document.querySelector(".next");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.

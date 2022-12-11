@@ -30,7 +30,7 @@ body {
 }
 
 .left{
-  width:60%;
+  width:90%;
   padding:20px;
 }
 
@@ -234,3 +234,4 @@ color:var(--primary-clr);
   border-left:1px solid var(-primary-clr);
   border-radius:0;
 }
+
