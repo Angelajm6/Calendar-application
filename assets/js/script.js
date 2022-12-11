@@ -2,8 +2,11 @@ const calendar = document.querySelector(".calendar"),
   date = document.querySelector(".date"),
   daysContainer = document.querySelector(".days"),
   prev = document.querySelector(".prev");
-  next = document.querySelector(".next");
-
+  (next = document.querySelector(".next")),
+  (todayBtn = document.querySelector(".today-btn")),
+  (gotoBtn = document.querySelector(".goto.btn")),
+  (dateInput = document.querySelector(".date-input"));
+  
 let today =new Date();
 let activeDay;
 let month =today.getMonth();
@@ -69,7 +72,6 @@ function initCalendar() {
     daysContainer.innerHTML = days;
   }
 
-
   initCalendar();
 
 //prev month
@@ -92,11 +94,38 @@ function nextMonth() {
   initCalendar();
 }
 
+//EventLitener on prev and next
+prev.addEventListener("click", prevMonth);
+next.addEventListener("click", nextMonth);
 
+todayBtn.addEventListener("click", () => {
+  today =new date();
+  month = today.getMonth();
+  year =today.getFullYear();
+  initCalendar();
+});
 
+dateInput.addEventListener("keyup", (e) => {
+  //allow only numbers remove anything else
+  dateInput.value = dateInput.value.replace(/[^0-9/]/g, "");
+  if (dateInput.value.lenght ==2){
+    //add a slash if two numbers entered
+    dateInput.value += "/";
+  }
+  if (dateInput.value.lenght > 7) { //don't allow more than 7 characters
+    dateInput.value =dateInput.value.slice(0,7);
+  }
+  
+  if (e.inputType =="deleteContentBackward") {
+    if (dateInput.value.lenght == 3) {
+      dateInput.value = dateInput.value.slice(0,2);
+    }
+  }
+});
 
+gotoBtn.addEventListener("click", gotoDate);
 
-
+//function to go to selected date
 
 
 
