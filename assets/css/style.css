@@ -326,7 +326,7 @@ color:var(--primary-clr);
   pointer-events: none;
 }
 
-.event::after {
+.events .event::after {
   content: "✓";
   position: absolute;
   top: 50%;
@@ -341,7 +341,7 @@ color:var(--primary-clr);
   transform: translateY(-50%);
 }
 
-.event:hover::after {
+.events .event:hover::after {
   display: flex;
 }
 

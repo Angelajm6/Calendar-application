@@ -27,6 +27,25 @@ const months = [
   "December",
 ];
 
+//Default events array
+const eventsArr = [
+  {
+    day:16,
+    month:11,
+    year:2022,
+    events: [
+    {
+      title: "Event 1 lorem ipsun dolar sit genfa tersa dsad",
+      time:"10:00 AM",
+    },
+    {
+    title:"Event 2",
+    time: "11:00 AM",
+    },
+  ]},
+];
+
+
 function initCalendar() {
 //To get prev month days and current month all days and remaining month days
   const firstDay = new Date(year,month,1);
@@ -40,27 +59,50 @@ function initCalendar() {
 //update date in the header of the calendar
   date.innerHTML = months[month] + " " + year;
 
-//Days on DOM
-  let days = "";
+ // adding days on dom
+ let days = "";
 
 //prev month days
   for (let x = day; x >0; x--) {
     days += '<div class= "day prev-date" >${prevDays - x + 1}</div>';
   }
 
-    //current month days
-    for(let i = 1; i < lastDate; i++) {
-      //if day is today add class today
+  //current month days
+  for(let i = 1; i < lastDate; i++) {
+
+  //check if event is present on current day
+let event =false;
+eventsArr.forEach((eventObj) => {
+  if (
+    eventObj.day == i &&
+    eventObj.month == month + 1 &&
+    eventObj.year == year
+  ) {
+    event = true;
+  }
+  });
+
+    //if day is today add class today
       if (
         i == new Date().getDate() &&
         year == new Date().getFullYear() &&
         month == new Date().getMonth()
       ) {
-      days += '<div class= "day today" >${i}</div>';
+
+        //if an event is found, add event class
+        if (event) {
+          days += '<div class= "day today event" >${i}</div>';
+        } else {
+          days += '<div class= "day today" >${i}</div>';
+        }
       } 
       //add remaining as it is
       else {
-        days += '<div class= "day" >${i}</div>';
+        if (event) {
+        days += '<div class= "day event" >${i}</div>';
+        } else {
+          days += '<div class= "day" >${i}</div>';
+        }
     }
   }
 
@@ -166,8 +208,33 @@ addEventTitle.addEventListener("input", (e) => {
 //time format in from and to time
 addEventFrom.addEventListener("input", (e) => {
   //remove anything else numbers 
-  addEventFrom.value =addEventFrom.value.replace(/[^0-9:]g, "");
+  addEventFrom.value =addEventFrom.value.replace(/[^0-9:]/g, "");
+  //if two numbers entered auto add :
+if (addEventFrom.value.lenght == 2) {
+  addEventFrom.value += ":";
+}
+//Don't let user enter more than 5 characters
+if (addEventFrom.value.lenght == 5) {
+  addEventFrom.value = addEventFrom.value.slice(0,5);
+}
 });
+
+//same with to time
+  addEventTo.addEventListener("input", (e) => {
+  //remove anything else numbers 
+  addEventTo.value =addEventTo.value.replace(/[^0-9:]/g, "");
+  //if two numbers entered auto add :
+if (addEventTo.value.lenght == 2) {
+  addEventTo.value += ":";
+}
+//Don't let user enter more than 5 characters
+if (addEventTo.value.lenght == 5) {
+  addEventTo.value = addEventTo.value.slice(0,5);
+}
+});
+
+
+
 
 
 
