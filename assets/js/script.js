@@ -144,9 +144,30 @@ function gotoDate(){
   alert("invalid date");
 }
 
+const addEventBtn = document.querySelector(".add-event"),
+      addEventContainer = document.querySelector(".add-event-wrapper"),
+      addEventCloseBtn = document.querySelector(".close"),
+      addEventTitle = document.querySelector(".event-name"),
+      addEventFrom = document.querySelector(".event-time-from");
+      addEventTo = document.querySelector(".event-time-to");
 
+addEventBtn.addEventListener("click", () => {
+  addEventContainer.classList.toggle("active");
+});
+addEventCloseBtn.addEventListener("click", () => {
+  addEventContainer.classList.remove("active");
+});
 
+//allow only 50 characters in the title
+addEventTitle.addEventListener("input", (e) => {
+  addEventTitle.value = AddEventTitle.value.slice(0,50);
+});
 
+//time format in from and to time
+addEventFrom.addEventListener("input", (e) => {
+  //remove anything else numbers 
+  addEventFrom.value =addEventFrom.value.replace(/[^0-9:]g, "");
+});
 
 
 
