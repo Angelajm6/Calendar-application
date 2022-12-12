@@ -43,6 +43,17 @@ const eventsArr = [
     time: "11:00 AM",
     },
   ]},
+  {
+      day:18,
+      month:11,
+      year:2022,
+      events: [
+      {
+        title: "Event 1 lorem ipsun dolar sit genfa tersa dsad",
+        time:"10:00 AM",
+      },
+    ]
+  },
 ];
 
 
@@ -234,7 +245,17 @@ if (addEventTo.value.lenght == 5) {
 });
 
 
+//function to add lstener on days after rendered
+function addEventListener() {
+  const days = document.querySelector(".day");
+  days.forEach ((day) => {
+    day.addEventListener("click", (e) => {
+      //set current day as active day
+      activeDay = Number(e.target.innerHTML);
 
+    }
+  }
+}
 
 
 
