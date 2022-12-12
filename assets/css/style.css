@@ -345,7 +345,18 @@ color:var(--primary-clr);
   display: flex;
 }
 
-.add-event-wrapper {
+.events .no-event{
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.5rem;
+  font-weight:500;
+  color:#878787;
+}
+
+.events .add-event-wrapper {
   position: absolute;
   bottom: 100px;
   left: 50%;

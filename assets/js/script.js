@@ -7,7 +7,8 @@ const calendar = document.querySelector(".calendar"),
   (gotoBtn = document.querySelector(".goto.btn")),
   (dateInput = document.querySelector(".date-input"));
   eventDay = document.querySelector(".event-Day"),
-  eventDate = document.querySelector(".event-date");
+  eventDate = document.querySelector(".event-date"),
+  eventContainer = document.querySelector(".events");
   
 let today =new Date();
 let activeDay;
@@ -104,6 +105,7 @@ eventsArr.forEach((eventObj) => {
 
       activeDay = i;
       getActiveDay(i);
+      updateEvents(i);
 
 
         //if an event is found, add event class
@@ -264,7 +266,7 @@ function addEventListener() {
 
       //call active day after click
       getActiveDay (e.target.innerHTML);
-
+      updateEvents (Number(e.target.innerHTML));
 
       //remove active from already active day
       days.forEach((day) => {
@@ -349,6 +351,16 @@ if (
       });
     }
   });
+
+  //if nothing is found
+
+  if (events == "") {
+    events = `<div class="no-event">
+              <h3>No Events</h3>
+              </div>`;
+  }
+  console.log(events);
+  eventsContainer.innerHTML = events;
 }
 
 
