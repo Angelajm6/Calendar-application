@@ -18,27 +18,29 @@ $(function () {
   let time = new Date().toLocaleTimeString("en");
   console.log(`Current Time is: ${time}`)
 
+ //show current date in the header of the page
+ let dt = new Date();
+ document.getElementById("currentDay").innerHTML = dt.toLocaleString();
 
-  //show current date in the header of the page
-  var dt = new Date();
-  document.getElementById("currentDay").innerHTML = dt.toLocaleString();
-  
+  //store the current value of the textarea in localStorage (or delete it if the textarea is blank).
+  localStorage.setItem("myKey", "textValue")
+
+  function Save() {
+    var myContent = document.getElementById("description").value;
+    localStorage.setItem("myContent", myContent);
+  }
+  function Load() {
+    var myContent = localStorage.getItem("myContent");
+    document.getElementById("description").value = myContent;
+  }
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
- 
 });
 
 
-
-
-//1. localStorage make 
 //2. info change based of TimeRanges
 //3. update page with what's in local storage
