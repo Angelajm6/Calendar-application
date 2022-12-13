@@ -11,11 +11,18 @@ $(function () {
     console.log(`let's save the task: ${task}`)
   }) 
 
-let today = new Date();
-let day = today.getDay();
-let dayList = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
-console.log("Today is : " + dayList[day] + "."); //display the current day
+  //display current day
+  let day = new Date().toLocaleDateString("en" , {weekday: "long"}); 
+  console.log(`today is: ${day}`);
+  //display current time
+  let time = new Date().toLocaleTimeString("en");
+  console.log(`Current Time is: ${time}`)
 
+  
+//let today = new Date();
+//let day = today.getDay();
+//let dayList = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+//console.log("Today is : " + dayList[day] + "."); //display the current day
 
 
   // TODO: Add code to apply the past, present, or future class to each time
