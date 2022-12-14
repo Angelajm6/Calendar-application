@@ -21,11 +21,9 @@ Pull requests are more than welcome. Feel free to add creativity or any idea tha
 
 The following image shows the web application's appearance and functionality:
 
-
-
-![] (images/Calendar.png)
-![] (GitHub-repo.png)
+<img width="1687" alt="Calendar" src="https://user-images.githubusercontent.com/109991922/207507534-be1c285f-e215-4bfe-a629-6dcc6dd8b8f7.png">
 
 
 URL of my GitHub repo: https://github.com/Angelajm6/Calendar-application.git
+
 URL of my webpage application: (https://angelajm6.github.io/Calendar-application/)
