@@ -21,7 +21,4 @@ Pull requests are more than welcome. Feel free to add creativity or any idea tha
 
 The following image shows the web application's appearance and functionality:
 
-<!-- @TODO: create ticket to review/update image) -->
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
-
 
