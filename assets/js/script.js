@@ -4,6 +4,9 @@ $(document).ready(function() {
 //show current date in the header of the page
   let dt = new Date();
   document.getElementById("currentDay").innerHTML = dt.toLocaleString();
+
+  let time = new Date().toLocaleTimeString("en");
+  console.log(`Current Time is: ${time}`)
   
 
 
