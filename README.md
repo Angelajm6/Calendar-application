@@ -19,8 +19,6 @@ Pull requests are more than welcome. Feel free to add creativity or any idea tha
 
 ## Mock-Up
 
-
-URL of my GitHub repo: https://github.com/Angelajm6/Calendar-application.git 
+URL of my GitHub repo: https://github.com/Angelajm6/Calendar-application.git
 
 URL of my webpage application: (https://angelajm6.github.io/Calendar-application/)
-
